@@ -18,7 +18,7 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70),
+        preferredSize: const Size.fromHeight(70),
         child: AppBar(
           backgroundColor: bgColor,
           elevation: 0,
@@ -55,9 +55,9 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(data.companyName.toString(),style: myStyle(17,titleTextColor,FontWeight.w600),),
-                              SizedBox(height: 1,),
+                              const SizedBox(height: 1,),
                               Text(data.email.toString(),style: myStyle(14,normalTextColor,FontWeight.w400),),
-                              SizedBox(height: 1,),
+                              const SizedBox(height: 1,),
                               Text(data.phone.toString(),style: myStyle(14,normalTextColor,FontWeight.w400),)
                             ],
                           ),
@@ -70,7 +70,7 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
         ],
       ),
 
-      floatingActionButton: Container(
+      floatingActionButton: const SizedBox(
         width: 145,
         height: 45,
         child: CustomFloatingButton(),

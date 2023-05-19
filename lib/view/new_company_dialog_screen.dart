@@ -7,7 +7,7 @@ import '../utils/custom_color.dart';
 import '../utils/custom_font.dart';
 import '../utils/spin_kit.dart';
 class NewCompanyDialog extends StatefulWidget {
-  NewCompanyDialog({
+  const NewCompanyDialog({
     super.key,
   });
 
@@ -91,7 +91,7 @@ class _NewCompanyDialogState extends State<NewCompanyDialog> {
                                     if(value!.isEmpty){
                                       return "Please Enter Password";
                                     }
-                                    if(value.length<3){
+                                    if(value.length<7){
                                       return "Use Strong Password";
                                     }
                                     // if(!value.contains("#") && !value.contains("\$")){
@@ -108,6 +108,9 @@ class _NewCompanyDialogState extends State<NewCompanyDialog> {
                                     if(value!.isEmpty){
                                       return "Please Enter phone number";
                                     }
+                                    if(value.length<9 || value.length > 15){
+                                      return "number must be 9 and 15 digit";
+                                    }
                                   },
                                   decoration: textFiledDecorator("Phone")
                               ),
@@ -117,7 +120,6 @@ class _NewCompanyDialogState extends State<NewCompanyDialog> {
                                   if(_formkey.currentState!.validate()){
                                     onButtonClick();
                                   }
-                                  // Navigator.pop(context);
                                 },
                                 child: Container(
                                   width: double.maxFinite,
